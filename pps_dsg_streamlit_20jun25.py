@@ -5,8 +5,28 @@ import numpy as np
 import seaborn as sns
 from matplotlib.lines import Line2D
 
-# Configure Streamlit page
-st.set_page_config(page_title="District Performance Dashboard", layout="wide")
+# Configure Streamlit page - side panel always open
+st.set_page_config(
+    page_title="District Performance Dashboard", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+st.markdown("""
+<style>
+    .stPlotlyChart, .stPyplot {
+        height: 500px !important;
+    }
+    .main h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .main .block-container {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Load data
 @st.cache_data
@@ -76,7 +96,7 @@ if page == "Chronic Absenteeism":
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0)
     
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=(10, 5))
     
     for i, pop in enumerate(full_df['Population'].unique()):
         data = full_df[
@@ -135,7 +155,7 @@ elif page == "Per Pupil Spending":
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0)
     
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=(10, 5))
     
     for i, pop in enumerate(full_df['Population'].unique()):
         data = full_df[
@@ -194,7 +214,7 @@ elif page == "4-Year Graduation Rate":
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0) 
 
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=(10, 5))
     
     for i, pop in enumerate(full_df['Population'].unique()):
         data = full_df[
@@ -261,7 +281,7 @@ elif page == "5/6-Year Graduation Rate":
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0)
     
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=(10, 5))
     
     for i, pop in enumerate(full_df['Population'].unique()):
         data = full_df[
@@ -334,7 +354,7 @@ elif page == "Academic Achievement":
     with col2:
         selected_subject = st.selectbox("Select Subject", subjects)
     
-    fig, ax = plt.subplots(figsize=(12, 7))
+    fig, ax = plt.subplots(figsize=(10, 5))
     
     # Filter for achievement levels to combine
     at_or_above_df = full_df[full_df['Achievement Level'] == 'At or Above State Expectations']
