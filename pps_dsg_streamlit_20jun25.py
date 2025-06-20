@@ -130,7 +130,7 @@ if page == "Chronic Absenteeism":
 # Per Pupil Spending Page
 elif page == "Per Pupil Spending":
     st.title("Per Pupil Spending Analysis")
-    st.write("Distribution of per pupil spending across Oregon school districts")
+    st.write("Distribution of per pupil spending across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0)
@@ -189,7 +189,7 @@ elif page == "Per Pupil Spending":
 # 4-Year Graduation Rate Page
 elif page == "4-Year Graduation Rate":
     st.title("4-Year Graduation Rate Analysis")
-    st.write("Distribution of 4-year graduation rates across Oregon school districts")
+    st.write("Distribution of 4-year graduation rates across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0) 
@@ -256,7 +256,7 @@ elif page == "4-Year Graduation Rate":
 # 5/6-Year Graduation Rate Page
 elif page == "5/6-Year Graduation Rate":
     st.title("5/6-Year Graduation Rate Analysis")
-    st.write("Distribution of 5/6-year graduation rates across Oregon school districts")
+    st.write("Distribution of 5/6-year graduation rates across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     selected_year = st.selectbox("Select Year", years[::-1], index=0)
