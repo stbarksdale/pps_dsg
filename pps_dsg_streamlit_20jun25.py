@@ -111,7 +111,7 @@ if page == "Chronic Absenteeism":
     st.write("Distribution of chronic absenteeism rates across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
-    selected_year = st.selectbox("Select Year", years[::-1], index=0)
+    selected_year = st.radio("Select Year", years, index=6, horizontal=True)
     
     fig, ax = plt.subplots(figsize=(10, 5))
     
@@ -170,7 +170,7 @@ elif page == "Per Pupil Spending":
     st.write("Distribution of per pupil spending across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
-    selected_year = st.selectbox("Select Year", years[::-1], index=0)
+    selected_year = st.radio("Select Year", years, index=6, horizontal=True)
     
     fig, ax = plt.subplots(figsize=(10, 5))
     
@@ -229,7 +229,7 @@ elif page == "4-Year Graduation Rate":
     st.write("Distribution of 4-year graduation rates across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
-    selected_year = st.selectbox("Select Year", years[::-1], index=0) 
+    selected_year = st.radio("Select Year", years, index=6, horizontal=True)
 
     fig, ax = plt.subplots(figsize=(10, 5))
     
@@ -296,7 +296,7 @@ elif page == "5/6-Year Graduation Rate":
     st.write("Distribution of 5/6-year graduation rates across Maine school districts")
     
     years = ["2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
-    selected_year = st.selectbox("Select Year", years[::-1], index=0)
+    selected_year = st.radio("Select Year", years, index=6, horizontal=True)
     
     fig, ax = plt.subplots(figsize=(10, 5))
     
@@ -367,7 +367,7 @@ elif page == "Academic Achievement":
     
     col1, col2 = st.columns(2)
     with col1:
-        selected_year = st.selectbox("Select Year", years[::-1], index=0)
+        selected_year = st.radio("Select Year", years, index=5, horizontal=True)
     with col2:
         selected_subject = st.selectbox("Select Subject", subjects)
     
