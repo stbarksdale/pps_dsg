@@ -14,6 +14,23 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+    /* Force sidebar to be visible and expanded */
+    section[data-testid="stSidebar"] {
+        display: block !important;
+        width: 21rem !important;
+        min-width: 21rem !important;
+    }
+    
+    /* Hide the sidebar collapse button */
+    button[kind="header"] {
+        display: none !important;
+    }
+    
+    /* Force sidebar content to be visible */
+    .sidebar .sidebar-content {
+        display: block !important;
+    }
+    
     .stPlotlyChart, .stPyplot {
         height: 500px !important;
     }
