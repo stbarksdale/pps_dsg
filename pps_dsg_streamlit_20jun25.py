@@ -32,7 +32,7 @@ st.markdown("""
     }
     
     .stPlotlyChart, .stPyplot {
-        height: 500px !important;
+        height: 350 px !important;
     }
     .main h1 {
         font-size: 2rem !important;
