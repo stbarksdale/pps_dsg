@@ -5,6 +5,25 @@ import numpy as np
 import seaborn as sns
 from matplotlib.lines import Line2D
 
+
+# Add this global font setting here:
+plt.rcParams.update({
+    'font.size': 10,           # General font size
+    'axes.titlesize': 12,      # Title font size
+    'axes.labelsize': 10,      # Axis label font size
+    'xtick.labelsize': 9,      # X-axis tick label size
+    'ytick.labelsize': 9,      # Y-axis tick label size
+    'legend.fontsize': 9       # Legend font size
+})
+
+# Configure Streamlit page - side panel always open
+st.set_page_config(
+    page_title="District Performance Dashboard", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+#end of added global settings
+
 # Configure Streamlit page - side panel always open
 st.set_page_config(
     page_title="District Performance Dashboard", 
